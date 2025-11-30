@@ -1,0 +1,82 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.button {
+  @include button-reset;
+  font-family: $font-body;
+  font-weight: 600;
+  border-radius: $radius-full;
+  transition: all $transition-normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  text-align: center;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+
+  &:not(:disabled):active {
+    transform: translateY(0);
+  }
+}
+
+// Variants
+.primary {
+  background-color: $color-gold;
+  color: $color-charcoal;
+
+  &:not(:disabled):hover {
+    background-color: lighten($color-gold, 10%);
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  color: $color-white;
+  border: 2px solid $color-white;
+
+  &:not(:disabled):hover {
+    background-color: $color-white;
+    color: $color-charcoal;
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: $color-gold;
+  border: 2px solid $color-gold;
+
+  &:not(:disabled):hover {
+    background-color: $color-gold;
+    color: $color-charcoal;
+  }
+}
+
+// Sizes
+.small {
+  font-size: $font-size-sm;
+  padding: $spacing-xs $spacing-md;
+}
+
+.medium {
+  font-size: $font-size-md;
+  padding: $spacing-sm $spacing-xl;
+}
+
+.large {
+  font-size: $font-size-lg;
+  padding: $spacing-md $spacing-2xl;
+}
+
+// Full width
+.fullWidth {
+  width: 100%;
+}

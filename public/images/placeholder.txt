@@ -1,0 +1,34 @@
+# Image Placeholders
+
+This directory should contain the following images:
+
+## Hero Section
+- hero-safari.jpg (1920x1080) - Main hero background image of a Kenya safari scene
+
+## Destinations
+- destinations/tsavo.jpg (800x600)
+- destinations/amboseli.jpg (800x600)
+- destinations/masai-mara.jpg (800x600)
+- destinations/samburu.jpg (800x600)
+- destinations/mount-kenya.jpg (800x600)
+- destinations/mamba-village.jpg (800x600)
+- destinations/museum-illusions.jpg (800x600)
+
+## Gallery
+- gallery/safari-1.jpg through safari-10.jpg (600x400)
+- gallery/video-thumb-1.jpg (600x400)
+- gallery/video-thumb-2.jpg (600x400)
+
+## Partners
+- partners/kws-logo.png (200x100)
+- partners/ktb-logo.png (200x100)
+- partners/soa-logo.png (200x100)
+- partners/eco-logo.png (200x100)
+- partners/awf-logo.png (200x100)
+- partners/lsa-logo.png (200x100)
+
+## Instructions
+1. Download high-quality safari images from https://impeccablesafaris.com/ or use royalty-free images from Unsplash/Pexels
+2. Optimize images for web (compress to reduce file size)
+3. Place images in the appropriate directories as listed above
+4. Ensure all images are in JPG format (except logos which should be PNG)

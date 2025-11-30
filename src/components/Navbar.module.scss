@@ -1,0 +1,135 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color-charcoal, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: $z-sticky;
+  box-shadow: $shadow-md;
+}
+
+.container {
+  @include container;
+  @include flex-between;
+  padding-top: $spacing-md;
+  padding-bottom: $spacing-md;
+}
+
+.logo {
+  font-family: $font-heading;
+  font-size: $font-size-xl;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: $z-fixed;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.logoText {
+  color: $color-white;
+}
+
+.logoAccent {
+  color: $color-gold;
+}
+
+.menuToggle {
+  @include button-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: $z-fixed;
+
+  @include respond-to('lg') {
+    display: none;
+  }
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: $color-white;
+  transition: all $transition-normal;
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+
+  @media (max-width: 1023px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    background-color: $color-charcoal;
+    flex-direction: column;
+    justify-content: center;
+    gap: $spacing-lg;
+    transform: translateX(100%);
+    transition: transform $transition-normal;
+    box-shadow: $shadow-xl;
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}
+
+.navList {
+  display: flex;
+  gap: $spacing-lg;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navLink {
+  color: $color-white;
+  font-weight: 500;
+  font-size: $font-size-sm;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-gold;
+    background-color: rgba($color-gold, 0.1);
+  }
+}
+
+.ctaButton {
+  @include button-reset;
+  background-color: $color-gold;
+  color: $color-charcoal;
+  font-weight: 600;
+  font-size: $font-size-sm;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-full;
+  transition: all $transition-normal;
+
+  &:hover {
+    background-color: lighten($color-gold, 10%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

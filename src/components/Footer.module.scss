@@ -1,0 +1,151 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.footer {
+  background-color: $color-charcoal;
+  color: $color-white;
+  padding: $spacing-3xl 0 $spacing-lg;
+}
+
+.container {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-2xl;
+
+  @include respond-to('md') {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.column {
+  &:first-child {
+    @include respond-to('md') {
+      padding-right: $spacing-xl;
+    }
+  }
+}
+
+.heading {
+  font-family: $font-heading;
+  font-size: $font-size-xl;
+  color: $color-gold;
+  margin-bottom: $spacing-md;
+}
+
+.description {
+  color: rgba($color-white, 0.8);
+  line-height: 1.6;
+  margin-bottom: $spacing-lg;
+}
+
+.social {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  @include flex-center;
+  background-color: rgba($color-white, 0.1);
+  border-radius: $radius-full;
+  color: $color-white;
+  transition: all $transition-normal;
+
+  &:hover {
+    background-color: $color-gold;
+    color: $color-charcoal;
+    transform: translateY(-3px);
+  }
+}
+
+.columnHeading {
+  font-family: $font-heading;
+  font-size: $font-size-md;
+  color: $color-gold;
+  margin-bottom: $spacing-md;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: rgba($color-white, 0.8);
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-gold;
+      padding-left: $spacing-xs;
+    }
+  }
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    color: rgba($color-white, 0.8);
+  }
+
+  a {
+    color: rgba($color-white, 0.8);
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-gold;
+    }
+  }
+}
+
+.icon {
+  font-size: $font-size-lg;
+}
+
+.bottom {
+  @include flex-between;
+  padding-top: $spacing-xl;
+  border-top: 1px solid rgba($color-white, 0.1);
+  flex-direction: column;
+  gap: $spacing-md;
+
+  @include respond-to('md') {
+    flex-direction: row;
+  }
+}
+
+.copyright {
+  color: rgba($color-white, 0.6);
+  font-size: $font-size-sm;
+}
+
+.legal {
+  display: flex;
+  gap: $spacing-lg;
+
+  a {
+    color: rgba($color-white, 0.6);
+    font-size: $font-size-sm;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-gold;
+    }
+  }
+}

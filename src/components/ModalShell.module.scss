@@ -1,0 +1,84 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color-black, 0.75);
+  @include flex-center;
+  z-index: $z-modal-backdrop;
+  padding: $spacing-md;
+  animation: fadeIn $transition-normal;
+}
+
+.modalContent {
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $shadow-xl;
+  animation: slideUp $transition-normal;
+  z-index: $z-modal;
+}
+
+.modalHeader {
+  @include flex-between;
+  padding: $spacing-lg $spacing-xl;
+  border-bottom: 1px solid rgba($color-charcoal, 0.1);
+}
+
+.modalTitle {
+  font-family: $font-heading;
+  font-size: $font-size-xl;
+  color: $color-charcoal;
+  margin: 0;
+}
+
+.closeButton {
+  @include button-reset;
+  width: 40px;
+  height: 40px;
+  @include flex-center;
+  border-radius: $radius-full;
+  color: $color-charcoal;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: rgba($color-charcoal, 0.1);
+    color: $color-gold;
+  }
+}
+
+.modalBody {
+  padding: $spacing-xl;
+  overflow-y: auto;
+  flex: 1;
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

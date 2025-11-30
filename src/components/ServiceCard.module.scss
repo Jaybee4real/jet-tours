@@ -1,0 +1,101 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.card {
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-md;
+  @include hover-lift;
+  height: 100%;
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: $spacing-md;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: $font-size-xl;
+  color: $color-charcoal;
+  margin-bottom: $spacing-md;
+}
+
+.description {
+  color: rgba($color-charcoal, 0.7);
+  line-height: 1.6;
+  margin-bottom: $spacing-lg;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: $spacing-xl;
+
+  li {
+    color: rgba($color-charcoal, 0.8);
+    font-size: $font-size-sm;
+    padding: $spacing-xs 0;
+    padding-left: $spacing-lg;
+    position: relative;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: $color-gold;
+      font-weight: bold;
+    }
+  }
+}
+
+.tiers {
+  border-top: 1px solid rgba($color-charcoal, 0.1);
+  padding-top: $spacing-lg;
+}
+
+.tiersHeading {
+  font-family: $font-heading;
+  font-size: $font-size-md;
+  color: $color-charcoal;
+  margin-bottom: $spacing-md;
+}
+
+.tier {
+  background-color: rgba($color-beige, 0.5);
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.tierName {
+  font-family: $font-heading;
+  font-size: $font-size-md;
+  color: $color-gold;
+  margin-bottom: $spacing-xs;
+}
+
+.tierDescription {
+  color: rgba($color-charcoal, 0.7);
+  font-size: $font-size-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.tierHighlights {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+
+  li {
+    background-color: $color-white;
+    color: rgba($color-charcoal, 0.8);
+    font-size: $font-size-xs;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $radius-sm;
+  }
+}

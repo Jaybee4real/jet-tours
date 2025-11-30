@@ -1,0 +1,121 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.carouselWrapper {
+  width: 100%;
+  padding: $spacing-md 0;
+}
+
+.swiper {
+  padding-bottom: $spacing-2xl;
+}
+
+.slide {
+  height: auto;
+}
+
+.slideContent {
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-normal;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+.imageWrapper,
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.image {
+  @include image-cover;
+  transition: transform $transition-slow;
+
+  .slideContent:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.videoThumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  cursor: pointer;
+  transition: transform $transition-normal;
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.caption {
+  padding: $spacing-md;
+  background-color: $color-white;
+
+  h4 {
+    font-family: $font-heading;
+    font-size: $font-size-md;
+    color: $color-charcoal;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+.category {
+  display: inline-block;
+  background-color: $color-beige;
+  color: $color-charcoal;
+  font-size: $font-size-xs;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-sm;
+  text-transform: capitalize;
+}
+
+// Swiper overrides - using wrapper class to scope global styles
+.carouselWrapper {
+  :global {
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $color-gold;
+      background-color: rgba($color-white, 0.9);
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-full;
+      box-shadow: $shadow-md;
+
+      &::after {
+        font-size: $font-size-md;
+      }
+
+      &:hover {
+        background-color: $color-gold;
+        color: $color-white;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      background-color: $color-gold;
+      opacity: 0.5;
+
+      &-active {
+        opacity: 1;
+      }
+    }
+  }
+}

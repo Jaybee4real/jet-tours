@@ -1,0 +1,160 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  @include image-cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba($color-black, 0.4) 0%,
+    rgba($color-black, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  color: $color-white;
+  padding: $spacing-xl 0;
+}
+
+.container {
+  @include container;
+  max-width: 900px;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  margin-bottom: $spacing-lg;
+  line-height: 1.2;
+  animation: fadeInUp 1s ease-out;
+
+  @include respond-to('md') {
+    font-size: 4.5rem;
+  }
+}
+
+.highlight {
+  color: $color-gold;
+}
+
+.subtitle {
+  font-size: $font-size-md;
+  line-height: 1.6;
+  margin-bottom: $spacing-2xl;
+  color: rgba($color-white, 0.9);
+  animation: fadeInUp 1s ease-out 0.2s both;
+
+  @include respond-to('md') {
+    font-size: $font-size-lg;
+  }
+}
+
+.cta {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: $spacing-xl;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  color: $color-white;
+  animation: fadeIn 1s ease-out 1s both;
+  cursor: pointer;
+
+  p {
+    font-size: $font-size-sm;
+    margin-top: $spacing-sm;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid $color-white;
+  border-radius: 12px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background-color: $color-white;
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px);
+  }
+}
