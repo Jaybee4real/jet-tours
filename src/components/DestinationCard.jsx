@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import PrimaryButton from './PrimaryButton';
 import styles from './DestinationCard.module.scss';
 
@@ -21,13 +22,15 @@ export default function DestinationCard({ destination }) {
         {destination.highlights && (
           <ul className={styles.highlights}>
             {destination.highlights.slice(0, 3).map((highlight, index) => (
-              <li key={index}>✓ {highlight}</li>
+              <li key={index}>{highlight}</li>
             ))}
           </ul>
         )}
-        <PrimaryButton variant="outline" size="small">
-          Learn More
-        </PrimaryButton>
+        <Link href={`/destinations/${destination.slug}`}>
+          <PrimaryButton variant="outline" size="small">
+            Learn More
+          </PrimaryButton>
+        </Link>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Logo from './Logo';
 import styles from './Navbar.module.scss';
 
 export default function Navbar({ onBookingClick }) {
@@ -13,9 +14,9 @@ export default function Navbar({ onBookingClick }) {
 
   const navLinks = [
     { href: '#home', label: 'Home' },
+    { href: '#services', label: 'Services' },
     { href: '#destinations', label: 'Destinations' },
     { href: '#gallery', label: 'Gallery' },
-    { href: '#services', label: 'Services' },
     { href: '#partners', label: 'Partners' },
   ];
 
@@ -23,8 +24,7 @@ export default function Navbar({ onBookingClick }) {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoText}>Safari</span>
-          <span className={styles.logoAccent}>Kenya</span>
+          <Logo variant="default" size="medium" />
         </Link>
 
         <button
@@ -38,7 +38,22 @@ export default function Navbar({ onBookingClick }) {
           <span className={styles.hamburger}></span>
         </button>
 
+        {isMenuOpen && (
+          <div 
+            className={styles.backdrop} 
+            onClick={() => setIsMenuOpen(false)}
+          />
+        )}
+
         <div className={`${styles.navMenu} ${isMenuOpen ? styles.active : ''}`}>
+          <button
+            className={styles.closeButton}
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            ×
+          </button>
+
           <ul className={styles.navList}>
             {navLinks.map((link) => (
               <li key={link.href} className={styles.navItem}>

@@ -8,6 +8,11 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    padding-top: 80px;
+  }
 }
 
 .imageWrapper {
@@ -19,8 +24,27 @@
   z-index: 0;
 }
 
+.slideWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  
+  &.active {
+    opacity: 1;
+  }
+}
+
 .heroImage {
   @include image-cover;
+  transition: transform 8s ease-out;
+  
+  .slideWrapper.active & {
+    transform: scale(1.05);
+  }
 }
 
 .overlay {
@@ -31,10 +55,24 @@
   bottom: 0;
   background: linear-gradient(
     to bottom,
-    rgba($color-black, 0.4) 0%,
-    rgba($color-black, 0.6) 100%
+    rgba($color-black, 0.3) 0%,
+    rgba($color-charcoal, 0.7) 100%
   );
   z-index: 1;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(
+      to top,
+      rgba($color-black, 0.6) 0%,
+      transparent 100%
+    );
+  }
 }
 
 .content {
@@ -44,6 +82,10 @@
   text-align: center;
   color: $color-white;
   padding: $spacing-xl 0;
+
+  @media (max-width: 768px) {
+    padding: $spacing-md 0 $spacing-2xl;
+  }
 }
 
 .container {
@@ -58,9 +100,29 @@
   margin-bottom: $spacing-lg;
   line-height: 1.2;
   animation: fadeInUp 1s ease-out;
+  white-space: nowrap;
+  background: linear-gradient(
+    90deg,
+    $color-white 0%,
+    $color-gold-light 50%,
+    $color-white 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1s ease-out, shimmer 3s linear infinite;
 
   @include respond-to('md') {
     font-size: 4.5rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
   }
 }
 
@@ -88,6 +150,43 @@
   animation: fadeInUp 1s ease-out 0.4s both;
 }
 
+.sliderDots {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: $spacing-sm;
+  animation: fadeIn 1s ease-out 1s both;
+
+  @media (max-width: 768px) {
+    bottom: 130px;
+  }
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba($color-white, 0.5);
+  border: 2px solid rgba($color-white, 0.8);
+  cursor: pointer;
+  transition: all $transition-normal;
+  padding: 0;
+
+  &:hover {
+    background-color: rgba($color-white, 0.7);
+    transform: scale(1.1);
+  }
+
+  &.activeDot {
+    background-color: $color-gold;
+    border-color: $color-gold;
+    transform: scale(1.2);
+  }
+}
+
 .scrollIndicator {
   position: absolute;
   bottom: $spacing-xl;
@@ -99,11 +198,20 @@
   animation: fadeIn 1s ease-out 1s both;
   cursor: pointer;
 
+  @media (max-width: 768px) {
+    bottom: 160px;
+  }
+
   p {
     font-size: $font-size-sm;
     margin-top: $spacing-sm;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    @media (max-width: 768px) {
+      display: block;
+      font-size: 0.75rem;
+    }
   }
 }
 
@@ -114,6 +222,10 @@
   border-radius: 12px;
   margin: 0 auto;
   position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .wheel {
@@ -126,6 +238,20 @@
   left: 50%;
   transform: translateX(-50%);
   animation: scroll 1.5s infinite;
+}
+
+.swipeIcon {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    animation: swipe 1.5s infinite;
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 @keyframes fadeInUp {
@@ -156,5 +282,25 @@
   100% {
     opacity: 0;
     transform: translateX(-50%) translateY(16px);
+  }
+}
+
+@keyframes swipe {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
   }
 }

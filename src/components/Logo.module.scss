@@ -1,0 +1,196 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $color-gold 0%, darken($color-gold, 10%) 100%);
+  border-radius: 8px;
+  padding: 6px;
+  transition: all $transition-normal;
+  box-shadow: 0 2px 8px rgba($color-gold, 0.3);
+  flex-shrink: 0;
+}
+
+.logoSvg {
+  width: 100%;
+  height: 100%;
+  color: $color-white;
+}
+
+.logoTextWrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoTextTop {
+  font-family: $font-heading;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: letter-spacing $transition-normal;
+}
+
+.logoTextBottom {
+  font-family: $font-heading;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ampersand {
+  color: $color-gold;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0 2px;
+}
+
+.logoAccent {
+  position: absolute;
+  bottom: -4px;
+  height: 2px;
+  background: linear-gradient(90deg, $color-gold 0%, transparent 100%);
+}
+
+// Size variants
+.size-small {
+  .logoIcon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .logoTextTop {
+    font-size: 0.85rem;
+  }
+  
+  .logoTextBottom {
+    font-size: 0.6rem;
+  }
+  
+  .logoAccent {
+    left: 32px;
+    width: 40px;
+  }
+}
+
+.size-medium {
+  .logoIcon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logoTextTop {
+    font-size: 1.1rem;
+  }
+  
+  .logoTextBottom {
+    font-size: 0.75rem;
+  }
+  
+  .logoAccent {
+    left: 45px;
+    width: 60px;
+  }
+}
+
+.size-large {
+  .logoIcon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .logoTextTop {
+    font-size: 1.5rem;
+  }
+  
+  .logoTextBottom {
+    font-size: 1rem;
+  }
+  
+  .logoAccent {
+    left: 60px;
+    width: 80px;
+  }
+}
+
+// Variant styles
+.variant-default {
+  .logoTextTop {
+    color: $color-white;
+  }
+  
+  .logoTextBottom {
+    color: rgba($color-white, 0.85);
+  }
+}
+
+.variant-dark {
+  .logoTextTop {
+    color: $color-charcoal;
+  }
+  
+  .logoTextBottom {
+    color: rgba($color-charcoal, 0.75);
+  }
+}
+
+.variant-light {
+  .logoTextTop {
+    color: $color-white;
+  }
+  
+  .logoTextBottom {
+    color: rgba($color-white, 0.9);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .size-medium {
+    .logoIcon {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .logoTextTop {
+      font-size: 0.95rem;
+    }
+    
+    .logoTextBottom {
+      font-size: 0.65rem;
+    }
+    
+    .logoAccent {
+      left: 40px;
+      width: 50px;
+    }
+  }
+  
+  .size-large {
+    .logoIcon {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .logoTextTop {
+      font-size: 1.2rem;
+    }
+    
+    .logoTextBottom {
+      font-size: 0.85rem;
+    }
+    
+    .logoAccent {
+      left: 50px;
+      width: 65px;
+    }
+  }
+}

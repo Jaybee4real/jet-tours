@@ -2,87 +2,141 @@ export const galleryItems = [
   {
     id: 1,
     type: 'image',
-    src: '/images/gallery/safari-1.jpg',
-    title: 'Lions in Maasai Mara',
+    src: '/images/gallery/gallery_image_1.jpeg',
+    title: 'Safari Adventure',
     category: 'wildlife'
   },
   {
     id: 2,
     type: 'image',
-    src: '/images/gallery/safari-2.jpg',
-    title: 'Elephants at Amboseli',
+    src: '/images/gallery/gallery_image_2.jpeg',
+    title: 'Kenya Wildlife',
     category: 'wildlife'
   },
   {
     id: 3,
     type: 'image',
-    src: '/images/gallery/safari-3.jpg',
-    title: 'Sunset Safari',
+    src: '/images/gallery/gallery_image_5.jpeg',
+    title: 'Safari Experience',
     category: 'landscapes'
   },
   {
     id: 4,
-    type: 'video',
-    src: '/videos/safari-highlights.mp4',
-    thumbnail: '/images/gallery/video-thumb-1.jpg',
-    title: 'Safari Highlights',
-    category: 'videos'
+    type: 'image',
+    src: '/images/gallery/gallery_image_7.jpeg',
+    title: 'African Landscape',
+    category: 'landscapes'
   },
   {
     id: 5,
     type: 'image',
-    src: '/images/gallery/safari-4.jpg',
-    title: 'Giraffe Family',
+    src: '/images/gallery/gallery_image_8.jpeg',
+    title: 'Safari Moments',
     category: 'wildlife'
   },
   {
     id: 6,
     type: 'image',
-    src: '/images/gallery/safari-5.jpg',
-    title: 'Cheetah on the Hunt',
+    src: '/images/gallery/gallery_image_12.jpeg',
+    title: 'Kenya Safari',
     category: 'wildlife'
   },
   {
     id: 7,
     type: 'image',
-    src: '/images/gallery/safari-6.jpg',
-    title: 'Mount Kilimanjaro View',
-    category: 'landscapes'
+    src: '/images/gallery/gallery_image_13.jpg',
+    title: 'Safari Wildlife',
+    category: 'wildlife'
   },
   {
     id: 8,
-    type: 'video',
-    src: '/videos/wildebeest-migration.mp4',
-    thumbnail: '/images/gallery/video-thumb-2.jpg',
-    title: 'The Great Migration',
-    category: 'videos'
+    type: 'image',
+    src: '/images/gallery/gallery_image_14.jpg',
+    title: 'Kenya Adventure',
+    category: 'wildlife'
   },
   {
     id: 9,
     type: 'image',
-    src: '/images/gallery/safari-7.jpg',
-    title: 'Zebra Crossing',
-    category: 'wildlife'
+    src: '/images/gallery/gallery_image_15.jpg',
+    title: 'Safari Landscape',
+    category: 'landscapes'
   },
   {
     id: 10,
     type: 'image',
-    src: '/images/gallery/safari-8.jpg',
-    title: 'Maasai Warrior',
-    category: 'culture'
+    src: '/images/gallery/gallery_image_16.jpg',
+    title: 'Wildlife Scene',
+    category: 'wildlife'
   },
   {
     id: 11,
     type: 'image',
-    src: '/images/gallery/safari-9.jpg',
-    title: 'Luxury Safari Camp',
-    category: 'accommodation'
+    src: '/images/gallery/gallery_image_17.jpg',
+    title: 'Kenya Nature',
+    category: 'landscapes'
   },
   {
     id: 12,
     type: 'image',
-    src: '/images/gallery/safari-10.jpg',
-    title: 'African Sunset',
-    category: 'landscapes'
+    src: '/images/gallery/gallery_image_18.jpg',
+    title: 'Safari Experience',
+    category: 'wildlife'
+  },
+  {
+    id: 13,
+    type: 'image',
+    src: '/images/gallery/gallery_image_19.jpg',
+    title: 'African Wildlife',
+    category: 'wildlife'
+  },
+  {
+    id: 14,
+    type: 'image',
+    src: '/images/gallery/gallery_image_20.jpg',
+    title: 'Kenya Safari Scene',
+    category: 'wildlife'
+  },
+  {
+    id: 15,
+    type: 'video',
+    src: '/videos/gallery_video_1.mp4',
+    title: 'Safari Wildlife Experience',
+    category: 'videos'
+  },
+  {
+    id: 16,
+    type: 'video',
+    src: '/videos/gallery_video_2.mp4',
+    title: 'Kenya Safari Adventure',
+    category: 'videos'
+  },
+  {
+    id: 17,
+    type: 'video',
+    src: '/videos/gallery_video_3.mp4',
+    title: 'Wildlife Encounters',
+    category: 'videos'
+  },
+  {
+    id: 18,
+    type: 'video',
+    src: '/videos/gallery_video_4.mp4',
+    title: 'Safari Highlights',
+    category: 'videos'
+  },
+  {
+    id: 19,
+    type: 'video',
+    src: '/videos/gallery_video_5.mp4',
+    title: 'African Safari Journey',
+    category: 'videos'
+  },
+  {
+    id: 20,
+    type: 'video',
+    src: '/videos/gallery_video_6.mp4',
+    title: 'Kenya Wildlife Safari',
+    category: 'videos'
   }
 ];

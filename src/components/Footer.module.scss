@@ -33,8 +33,12 @@
 .heading {
   font-family: $font-heading;
   font-size: $font-size-xl;
-  color: $color-gold;
+  color: $color-white;
   margin-bottom: $spacing-md;
+}
+
+.footerLogo {
+  margin-bottom: $spacing-lg;
 }
 
 .description {

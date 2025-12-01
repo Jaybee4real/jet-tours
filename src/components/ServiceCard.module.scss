@@ -8,6 +8,10 @@
   box-shadow: $shadow-md;
   @include hover-lift;
   height: 100%;
+
+  @media (max-width: 768px) {
+    padding: $spacing-lg $spacing-md;
+  }
 }
 
 .icon {

@@ -21,6 +21,7 @@
   box-shadow: $shadow-md;
   transition: all $transition-normal;
   height: 100%;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
@@ -34,6 +35,12 @@
   width: 100%;
   height: 300px;
   overflow: hidden;
+}
+
+.videoPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .image {
@@ -117,5 +124,147 @@
         opacity: 1;
       }
     }
+  }
+}
+
+// Modal Styles
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color-black, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+  animation: fadeIn 0.3s ease-out;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.modalContent {
+  position: relative;
+  max-width: 1200px;
+  max-height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideUp 0.3s ease-out;
+
+  @media (max-width: 768px) {
+    max-height: 100vh;
+    height: 100vh;
+    max-width: 100%;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: $color-white;
+  font-size: 3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-fast;
+  z-index: 10001;
+
+  &:hover {
+    color: $color-gold;
+    transform: rotate(90deg);
+  }
+
+  @media (max-width: 768px) {
+    top: $spacing-md;
+    right: $spacing-md;
+    background-color: rgba($color-black, 0.5);
+    border-radius: $radius-full;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+  }
+}
+
+.modalImageWrapper {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  aspect-ratio: 16/9;
+
+  @media (max-width: 768px) {
+    max-height: 100vh;
+    height: 100vh;
+  }
+}
+
+.modalImage {
+  object-fit: contain;
+}
+
+.modalVideo {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-xl;
+
+  @media (max-width: 768px) {
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+.modalCaption {
+  margin-top: $spacing-lg;
+  text-align: center;
+
+  h3 {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    color: $color-white;
+  }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: $spacing-lg;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba($color-black, 0.8), transparent);
+    padding: $spacing-lg;
+    margin-top: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

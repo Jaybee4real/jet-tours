@@ -6,10 +6,11 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba($color-charcoal, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: rgba($color-charcoal, 0.92);
+  backdrop-filter: blur(20px);
   z-index: $z-sticky;
-  box-shadow: $shadow-md;
+  box-shadow: 0 1px 0 rgba($color-white, 0.05);
+  border-bottom: 1px solid rgba($color-white, 0.08);
 }
 
 .container {
@@ -20,25 +21,9 @@
 }
 
 .logo {
-  font-family: $font-heading;
-  font-size: $font-size-xl;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   z-index: $z-fixed;
-
-  &:hover {
-    color: inherit;
-  }
-}
-
-.logoText {
-  color: $color-white;
-}
-
-.logoAccent {
-  color: $color-gold;
+  text-decoration: none;
+  display: block;
 }
 
 .menuToggle {
@@ -60,6 +45,20 @@
   transition: all $transition-normal;
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  
+  @include respond-to('lg') {
+    display: none;
+  }
+}
+
 .navMenu {
   display: flex;
   align-items: center;
@@ -70,17 +69,50 @@
     top: 0;
     right: 0;
     bottom: 0;
+    height: 100vh;
     width: 280px;
-    background-color: $color-charcoal;
+    background: #1d1b16;
     flex-direction: column;
     justify-content: center;
     gap: $spacing-lg;
     transform: translateX(100%);
     transition: transform $transition-normal;
-    box-shadow: $shadow-xl;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+    padding: $spacing-xl;
 
     &.active {
       transform: translateX(0);
+    }
+  }
+}
+
+.closeButton {
+  display: none;
+
+  @media (max-width: 1023px) {
+    display: block;
+    position: absolute;
+    top: $spacing-lg;
+    right: $spacing-lg;
+    background: none;
+    border: none;
+    color: $color-white;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-fast;
+
+    &:hover {
+      color: $color-gold;
+      transform: rotate(90deg);
     }
   }
 }
@@ -100,36 +132,62 @@
 }
 
 .navLink {
-  color: $color-white;
-  font-weight: 500;
-  font-size: $font-size-sm;
-  padding: $spacing-xs $spacing-sm;
-  border-radius: $radius-md;
-  transition: all $transition-fast;
+  color: rgba($color-white, 0.85);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $color-gold;
+    transition: width 0.3s ease;
+  }
 
   &:hover {
-    color: $color-gold;
-    background-color: rgba($color-gold, 0.1);
+    color: $color-white;
+    
+    &::after {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    font-size: $font-size-lg;
+    
+    &::after {
+      display: none;
+    }
   }
 }
 
 .ctaButton {
   @include button-reset;
-  background-color: $color-gold;
-  color: $color-charcoal;
-  font-weight: 600;
-  font-size: $font-size-sm;
-  padding: $spacing-sm $spacing-lg;
+  background: linear-gradient(135deg, $color-gold 0%, darken($color-gold, 5%) 100%);
+  color: $color-white;
+  padding: 0.625rem 1.5rem;
   border-radius: $radius-full;
-  transition: all $transition-normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba($color-gold, 0.2);
 
   &:hover {
-    background-color: lighten($color-gold, 10%);
-    transform: translateY(-2px);
-    box-shadow: $shadow-lg;
+    background: linear-gradient(135deg, lighten($color-gold, 3%) 0%, $color-gold 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba($color-gold, 0.3);
   }
 
-  &:active {
-    transform: translateY(0);
+  @media (max-width: 1023px) {
+    width: 100%;
+    padding: $spacing-md;
   }
 }

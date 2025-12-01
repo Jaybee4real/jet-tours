@@ -1,14 +1,22 @@
 // Color Palette (inspired by Impeccable Safaris)
-$color-gold: #bea26a;
+$color-gold: #c9a961;
+$color-gold-light: #d4b876;
+$color-gold-dark: #a88d4f;
 $color-charcoal: #1d1b16;
-$color-beige: #f5efe0;
+$color-charcoal-light: #2d2a24;
+$color-beige: #f8f3e8;
+$color-beige-dark: #ebe4d3;
 $color-safari-green: #3a4a3a;
 $color-white: #ffffff;
 $color-black: #000000;
 
+// Gradients
+$gradient-gold: linear-gradient(135deg, $color-gold-light 0%, $color-gold 50%, $color-gold-dark 100%);
+$gradient-charcoal: linear-gradient(180deg, $color-charcoal 0%, $color-charcoal-light 100%);
+
 // Typography
-$font-heading: 'Playfair Display', serif;
-$font-body: 'Inter', sans-serif;
+$font-heading: var(--font-heading), 'Cormorant Garamond', serif;
+$font-body: var(--font-body), 'Montserrat', sans-serif;
 
 // Font Sizes
 $font-size-xs: 0.875rem;    // 14px

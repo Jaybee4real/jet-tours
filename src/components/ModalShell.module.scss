@@ -12,6 +12,10 @@
   z-index: $z-modal-backdrop;
   padding: $spacing-md;
   animation: fadeIn $transition-normal;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 .modalContent {
@@ -26,6 +30,14 @@
   box-shadow: $shadow-xl;
   animation: slideUp $transition-normal;
   z-index: $z-modal;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
 }
 
 .modalHeader {
@@ -60,6 +72,10 @@
   padding: $spacing-xl;
   overflow-y: auto;
   flex: 1;
+
+  @media (max-width: 768px) {
+    padding: $spacing-md;
+  }
 }
 
 // Animations

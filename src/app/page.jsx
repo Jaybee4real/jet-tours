@@ -53,7 +53,7 @@ export default function Home() {
             </iframe>
           </div>
           <p className={styles.fallbackMessage}>
-            If the form doesn't load, please contact us directly at{' '}
+            If the form doesn&apos;t load, please contact us directly at{' '}
             <a href="mailto:info@safarikenya.com">info@safarikenya.com</a>
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function Home() {
             </iframe>
           </div>
           <p className={styles.fallbackMessage}>
-            If the form doesn't load, please contact us at{' '}
+            If the form doesn&apos;t load, please contact us at{' '}
             <a href="mailto:partners@safarikenya.com">partners@safarikenya.com</a>
           </p>
         </div>

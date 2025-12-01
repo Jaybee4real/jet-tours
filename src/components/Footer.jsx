@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from './Logo';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
@@ -9,7 +10,9 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.column}>
-            <h3 className={styles.heading}>Safari Kenya</h3>
+            <div className={styles.footerLogo}>
+              <Logo variant="light" size="large" />
+            </div>
             <p className={styles.description}>
               Experience the magic of Kenya with our expertly curated safari tours and premium airport transfer services.
             </p>
@@ -74,7 +77,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            © {currentYear} Safari Kenya. All rights reserved.
+            © {currentYear} J.E.T Tours. All rights reserved.
           </p>
           <div className={styles.legal}>
             <Link href="#privacy">Privacy Policy</Link>

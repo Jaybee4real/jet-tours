@@ -1,7 +1,6 @@
 import SectionHeading from '@/components/SectionHeading';
 import PrimaryButton from '@/components/PrimaryButton';
-import { partners, partnershipBenefits } from '@/data/partners';
-import Image from 'next/image';
+import { partnershipBenefits } from '@/data/partners';
 import styles from './PartnersSection.module.scss';
 
 export default function PartnersSection({ onPartnerClick }) {
@@ -10,31 +9,13 @@ export default function PartnersSection({ onPartnerClick }) {
       <div className="container">
         <SectionHeading
           subtitle="Trusted Partnerships"
-          title="Our Partners"
+          title="Partner With Us"
         />
         
         <div className={styles.content}>
           <p className={styles.intro}>
             We collaborate with leading organizations in wildlife conservation, tourism, and hospitality to deliver exceptional safari experiences.
           </p>
-
-          <div className={styles.partnersGrid}>
-            {partners.map((partner) => (
-              <div key={partner.id} className={styles.partnerCard}>
-                <div className={styles.logoWrapper}>
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    width={150}
-                    height={80}
-                    className={styles.logo}
-                  />
-                </div>
-                <h4 className={styles.partnerName}>{partner.name}</h4>
-                <p className={styles.partnerDescription}>{partner.description}</p>
-              </div>
-            ))}
-          </div>
 
           <div className={styles.benefits}>
             <h3 className={styles.benefitsTitle}>Partnership Benefits</h3>
