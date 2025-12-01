@@ -39,11 +39,7 @@ export const metadata = {
     telephone: false,
   },
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' }
-    ],
-    apple: '/apple-touch-icon.png',
+    icon: { url: '/favicon.svg', type: 'image/svg+xml' },
   },
   manifest: '/site.webmanifest',
   appleWebApp: {
@@ -58,20 +54,11 @@ export const metadata = {
     siteName: 'J.E.T Tours & Safari',
     title: 'J.E.T Tours & Safari - Kenya Tours & Airport Transfers',
     description: 'Experience the magic of Kenya with our expertly curated safari tours and premium airport transfer services.',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'J.E.T Tours & Safari - Kenya Wildlife Adventures',
-      }
-    ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'J.E.T Tours & Safari - Kenya Tours & Airport Transfers',
     description: 'Experience the magic of Kenya with our expertly curated safari tours and premium airport transfer services.',
-    images: ['/og-image.jpg'],
     creator: '@jettours',
   },
   robots: {
